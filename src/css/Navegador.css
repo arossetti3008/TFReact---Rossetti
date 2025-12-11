@@ -1,63 +1,84 @@
 .nav-container {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     background-color: rgba(233, 232, 232, 0.41);
-    width: auto;
-    height: 70px; 
+    width: 100%;
+    height: 3.75rem;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0 20px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container h3 {
     display: flex;
-    margin-left: 20px; 
     align-items: center;
-    gap:20px;
-    font-size: 35px;  
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6)); 
-    margin-bottom: 0; 
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+    margin: 0;
 }
 
 .nav-bar {
     display: flex;
-    align-items: center; 
+    align-items: center;
     height: 100%;
 }
 
 .nav-list {
     display: flex;
     text-decoration: none;
-    margin: 0 5px; 
+    margin: 0 0.5rem;
     font-weight: bold;
     transition: 0.3s;
-    align-items: center; 
+    align-items: center;
 }
 
-/* Estilo cuando el enlace está ACTIVO (seleccionado) */
 .nav-list.active {
     color: #ffffff;
     border-bottom: 2px solid #ffffff;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.793));
-    opacity: (0);
 }
 
 .nav-titulo {
-    padding: 10px 15px; 
-    font-size: 25px;    
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
     color: rgb(0, 0, 0);
-    filter: drop-shadow(2px 2px 2px rgba(255, 255, 255, 0.793));
-    margin-right: 10px; 
+    filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.793));
+    margin-right: 0.5rem;
     transition: all 0.3s ease;
-    opacity: 0.7; 
+    opacity: 0.8;
+    text-decoration: none;
 }
 
 .nav-titulo:hover {
     border-bottom: 2px solid whitesmoke;
     text-shadow: 0px 0px 4px rgb(220, 210, 28);
     opacity: 1;
+}
+
+/* --- BREAK --- */
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-bar {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+
+    .nav-titulo {
+        font-size: 1rem;
+        padding: 0.5rem;
+        margin: 0;
+    }
 }

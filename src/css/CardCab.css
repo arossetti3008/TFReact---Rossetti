@@ -1,66 +1,110 @@
-/* Contenedor de todo el Div */
+/* --- CONTENEDOR PRINCIPAL --- */
 .card-lateral {
     background-color: rgba(250, 250, 250, 0.7);
-    margin-top: 10px;
-    width: 70%;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
 }
 
-/* Contendor de la card */
+/* --- GRILLA DE CARTAS --- */
 .card-ppal {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem;
     justify-content: center;
+    align-items: start;
+}
+
+.card-ppal>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-
 }
 
-.card-ppal>img {
-    width: 300px;
+/* --- IMAGENES --- */
+.card-ppal img {
+    width: 100%;
+    max-width: 250px;
     border: 3px solid black;
-    padding: 10px;
+    padding: 5px;
     object-fit: cover;
-    background-position: center;
-    /* Centra la imagen */
-    background-repeat: no-repeat;
-    margin: 15px;
+    display: block;
+    margin: 0 auto;
     filter: grayscale(100%) sepia(50%) contrast(1.5);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
-.card-ppal>img:hover {
+.card-ppal img:hover {
     filter: grayscale(0%) sepia(0%) contrast(1.5);
-
+    transform: scale(1.05);
 }
 
-
-/* Contendor del texto */
+/* --- TEXTOS (BIO) --- */
 .card-bio {
-    font-size: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
+/* --- TÍTULO Y PÁRRAFO --- */
 .card-bio>h2,
 .card-bio>p {
-    padding: 20px;
-    width: 300px;
-    border: 3px solid black;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: none;
+    border: 2px solid black;
+    background-color: rgba(47, 47, 47, 0.9);
+    padding: 1rem;
+    margin-top: 5px;
+    color: whitesmoke;
 }
 
-
 .card-bio>h2 {
-    margin: 10px;
     text-align: center;
-    background-color: rgba(47, 47, 47, 0.8);
-    font-size: 25px;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-bio>p {
-    margin: 10px;
-    /* padding: 15px; */
-    text-align: right;
-    background-color: rgba(47, 47, 47, 0.8);
-    font-size: 20px;
+    text-align: justify;
+    margin-top: 0;
+    border-top: none;
+    line-height: 1.4;
+}
+
+/* --- BREAK --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .card-ppal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .card-lateral {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    .card-ppal {
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        gap: 2rem;
+    }
+
+
+    .card-ppal img {
+        max-width: 300px;
+    }
 }

@@ -1,38 +1,39 @@
 .tarot-container {
-  font-size: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
-  /* border: 2px solid whitesmoke; */
-  flex-direction: column;
-  padding: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: start;
 }
 
 .tarot-container>h2 {
-  font-size: 50px;
+  font-size: 2.5rem;
   text-align: center;
-  z-index: 10;
+  margin-bottom: 1rem;
+  grid-column: 1 / -1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .tarot-form {
   position: relative;
-  font-size: 30px;
   display: flex;
   flex-direction: column;
-  margin: 10px 0px 0px 30px;
-  width: 700px;
-  height: 800px;
-  padding: 10px;
-  /* border: 1px solid blue; */
-  align-items: flex-start;
-  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 1.5rem;
   background-color: rgba(250, 250, 250, 0.7);
   background-image: url(./img/fondo.jpg);
-  overflow: hidden;
-  align-content: center;
-  align-items: center;
+  background-size: cover;
   border: 2px solid whitesmoke;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
 
 .tarot-form::before {
   content: '';
@@ -41,87 +42,127 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.4); Fondo oscuro semitransparente */
-  backdrop-filter: blur(2px) contrast(1.2);
-  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px) contrast(1.1);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 0;
-  /* Asegura que esté detrás del contenido */
 }
 
+
+.tarot-form>* {
+  z-index: 2;
+  position: relative;
+}
 
 .tarot-form img {
-  width: 500px;
-}
-
-input[type="date"] {
-  display: flex;
-  text-align: center;
-  font-size: 20px;
-  padding: 10px;
-  color: black;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  width: 400px;
-  border: none;
-  filter: drop-shadow(0px 0px 6px rgb(0, 0, 0));
-  z-index: 10;
-}
-
-button {
-  padding: 20px;
-  color: black;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 20px;
-  border-radius: 10px;
-  transition: all 0.7s ease-in-out;
-  z-index: 10;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  display: block;
 }
 
 label {
   color: black;
-  z-index: 10;
-  padding: 10px 40px;
-  margin: 30px 30px 40px 30px;
-  background-color: rgba(250, 250, 250, 0.7);
-  filter: drop-shadow(0px 0px 6px rgb(0, 0, 0));
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(250, 250, 250, 0.85);
+  border-radius: 5px;
+  text-align: center;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="date"] {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(250, 250, 250, 0.9);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 button:hover {
   color: whitesmoke;
-  background-color: rgba(47, 47, 47, 0.8);
-  filter: drop-shadow(0px 0px 6px rgb(0, 0, 0));
-  
+  background-color: rgba(47, 47, 47, 0.95);
+  transform: scale(1.05);
 }
 
+/* Sección de Resultado de Cartas */
 .card-display {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 10px;
 }
 
-.card-display h3{
-  padding: 20px;
-  background-color: rgba(47, 47, 47, 0.8);
+.card-display h3 {
+  padding: 1rem 2rem;
+  background-color: rgba(47, 47, 47, 0.9);
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
+
 .card-frame {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 50px;
-
+  width: 100%;
 }
 
 .card-frame img {
-  padding: 20px;
-  width: 400px;
-  border-radius: 30px;
-  margin: 10px;
-  transition: all 0.4s ease-in-out;
-  filter: sepia(50%) contrast(1.2) drop-shadow(0px 0px 10px rgb(202, 29, 179));
-
-
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  margin: 1rem;
+  filter: sepia(50%) drop-shadow(0px 0px 8px rgb(202, 29, 179));
 }
 
-
 .card-frame p {
-  width: 200px;
-  font-size: 30px;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* --- BREAK --- */
+
+@media (max-width: 1024px) {
+  .tarot-container {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tarot-container {
+    padding: 1rem;
+  }
+
+  .tarot-form,
+  .card-display {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tarot-container>h2 {
+    font-size: 2rem;
+  }
 }

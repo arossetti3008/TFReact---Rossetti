@@ -2,35 +2,59 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../css/Navegador.css";
 
-
 function Navegador() {
+const iconStyle = {
+    marginRight: "8px",
+    verticalAlign: "middle",
+    fontSize: "24px", // Tamaño estándar de icono
+    // filter: "drop-shadow(0 0 2px rgba(255, 215, 0, 0.5))" // Brillo dorado
+  };
+
+  // Estilo especial para el icono grande del Logo
+  const logoIconStyle = {
+    fontSize: "60px", // Tamaño grande para el logo
+    verticalAlign: "middle",
+    marginRight: "10px",
+    color: "inherit", // Hereda el color del texto
+    filter: "drop-shadow(0 0 5px rgba(0, 0, 0, 0.6))"
+  };
+
+
   return (
     <>
       <div className="nav-container">
-        
-       <h3>  {/* <h3> style={{ display: 'flex', alignItems: 'center', gap: '8px' }}> */}
-  <svg width="80" height="100" viewBox="0 0 24 24" fill="currentColor" style={{ filter: "drop-shadow(0 0 5px rgba(0, 0, 0, 0.6))" }}>
-    {/* Un grupo de 3 estrellas de 4 puntas */}
-    <path d="M16.5 12.5L15 6L13.5 12.5L7 14L13.5 15.5L15 22L16.5 15.5L23 14L16.5 12.5Z" />
-    <path d="M6 10L4.5 4L3 10L0 11.5L3 13L4.5 19L6 13L9 11.5L6 10Z" />
-  </svg>
-  Legado Arcano
-</h3>
+        <h3>
+          <span className="material-symbols-outlined" style={logoIconStyle}> matter</span>
+          Legado Arcano
+        </h3>
         <div className="nav-bar">
-          {/* Fíjate que eliminé la etiqueta <a> interna y corregí className */}
           <NavLink className="nav-list nav-titulo" to="/">
-            Home
+           <span className="material-symbols-outlined" style={iconStyle}>
+              explore
+            </span>
+            Inicio
           </NavLink>
           <NavLink className="nav-list nav-titulo" to="/historia">
+           <span className="material-symbols-outlined" style={iconStyle}>
+              hourglass</span>
             Historia
           </NavLink>
           <NavLink className="nav-list nav-titulo" to="/adivinacion">
+           <span className="material-symbols-outlined" style={iconStyle}>
+              hotel_class
+            </span>
             Adivinación
           </NavLink>
           <NavLink className="nav-list nav-titulo" to="/modernismo">
+           <span className="material-symbols-outlined" style={iconStyle}>
+            Playing_Cards
+            </span>
             Modernismo
           </NavLink>
           <NavLink className="nav-list nav-titulo" to="/mi-arcano">
+          <span className="material-symbols-outlined" style={iconStyle}>
+              Switch_Account
+            </span>
             Tu Arcano
           </NavLink>
         </div>
